@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # ----------------------------------------------------
+  # Configuración para Desarrollo Local
+  # ----------------------------------------------------
+  db:
+    image: postgres:15-alpine
+    env_file:
+      - .env
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend_local:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env.local
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      # línea para usar Gunicorn
+    command: gunicorn --bind 0.0.0.0:5000 'app:app'
+
+  # ----------------------------------------------------
+  # Configuración para AWS RDS
+  # ----------------------------------------------------
+  # backend_aws:
+  #   build: .
+  #   ports:
+  #     - "5000:5000"
+  #   env_file:
+  #     - .env.nube 
+  #   volumes:
+  #     - .:/app
+  #   command: gunicorn --bind 0.0.0.0:5000 'app:app'
+volumes:
+  db_data:

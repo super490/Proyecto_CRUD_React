@@ -1,0 +1,26 @@
+html {
+  /* Asegura que html tenga al menos el 100% de altura */
+  min-height: 100%;
+}
+
+body {
+  /* Ruta a una imagen sutil */
+  background-image: url('/fondo.jpg');
+  /* Cubre todo el fondo */
+  background-size: cover;
+  /* Mantiene el fondo fijo al hacer scroll */
+  background-attachment: fixed;
+  /* Color de fallback si la imagen no carga */
+  background-color: #222;
+  /* Color del texto */
+  color: #f0f0f0;
+  /* Asegura que el body ocupe al menos el 100% de la ventana */
+  min-height: 100vh;
+  /* Elimina el margen por defecto del body */
+  margin: 0;
+}
+
+#root {
+  /* Asegura que el contenedor principal de React tenga al menos el 100% de la altura de la ventana */
+  min-height: 100vh;
+}

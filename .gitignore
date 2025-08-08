@@ -1,0 +1,20 @@
+# Archivos y carpetas del frontend (React)
+# ----------------------------------------
+/app/node_modules/
+/app/build/  
+/app/.env  
+
+# Archivos y carpetas del backend (Flask)
+# ----------------------------------------
+# Carpetas de caché de Python
+/backend_flask/__pycache__/
+/backend_flask/migrations/  
+
+# Archivos de entorno y de configuración local
+/backend_flask/.env
+/backend_flask/.env.nube
+.flaskenv
+
+# Entornos virtuales de Python
+venv/
+env/
