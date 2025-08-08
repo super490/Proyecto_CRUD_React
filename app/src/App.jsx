@@ -8,10 +8,7 @@ import ListaUsuarios from "./components/ListaUsuarios/ListaUsuarios";
 
 function App() {
  // Usamos un estado inicial de ejemplo, o vacío
-  const [usuarios, setUsuarios] = useState([
-    { id: 1, correoElectronico: 'ejemplo@correo.com', nombre: 'Ejemplo de Usuario', edad: 25 },
-    { id: 2, correoElectronico: 'prueba@correo.com', nombre: 'Prueba de Usuario', edad: 30 }
-  ]);
+  const [usuarios, setUsuarios] = useState([]);
   const [activeTab, setActiveTab] = useState('registro');
   const [usuarioAEditar, setUsuarioAEditar] = useState(null);
 
