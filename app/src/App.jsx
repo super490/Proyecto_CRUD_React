@@ -63,9 +63,53 @@ const actualizarUsuario = (usuarioActualizado) => {
     setUsuarioAEditar(null);
 };
 
-  return (
+return (
     <div className="App">
-   </div>
+      <div className="section">
+        <div className="container">
+          <div className="tabs is-boxed is-centered">
+            <ul>
+              <li className={activeTab === 'registro' ? 'is-active' : ''}>
+                <a onClick={() => {
+                  setActiveTab('registro');
+                  setUsuarioAEditar(null); // Limpiar usuarioAEditar al cambiar a registro
+                }}>
+                  <span className="icon is-small"><i className="fas fa-user-plus" aria-hidden="true"></i></span>
+                  <span>Registro de Usuario</span>
+                </a>
+              </li>
+              <li className={activeTab === 'lista' ? 'is-active' : ''}>
+                <a onClick={() => {
+                  setActiveTab('lista');
+                  setUsuarioAEditar(null); // Limpiar usuarioAEditar al cambiar a lista
+                }}>
+                  <span className="icon is-small"><i className="fas fa-users" aria-hidden="true"></i></span>
+                  <span>Listado de Usuarios</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="columns is-centered">
+            <div className={`column ${activeTab === 'registro' ? 'is-half' : 'is-full'}`}>
+              {activeTab === 'registro' && (
+                <SimpleForm
+                  onFormSubmit={handleFormSubmit}
+                  usuarioInicial={usuarioAEditar}
+                />
+              )}
+              {activeTab === 'lista' && (
+                <ListaUsuarios
+                  usuarios={usuarios}
+                  onUsuarioEliminar={eliminarUsuario}
+                  onUsuarioEditar={iniciarEdicionUsuario}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
