@@ -18,7 +18,7 @@ services:
     ports:
       - "5000:5000"
     env_file:
-      - .env.local
+      - .env
     volumes:
       - .:/app
     depends_on:
