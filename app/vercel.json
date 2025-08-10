@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "http://[dirección-ip-pública-de-tu-ec2]/:match*"
+    }
+  ]
+}
