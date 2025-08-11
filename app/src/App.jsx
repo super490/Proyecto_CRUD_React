@@ -3,7 +3,8 @@ import axios from 'axios';
 import SimpleForm from "./components/SimpleForm/SimpleForm";
 import ListaUsuarios from "./components/ListaUsuarios/ListaUsuarios";
 
-const API_BASE_URL = 'http://localhost:5000/api';
+// const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = `/api`;
 
 function App() {
   const [usuarios, setUsuarios] = useState([]);
